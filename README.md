@@ -38,11 +38,17 @@ ReactiveForms.createElement({
 {{> basicInput schema=schema field='email'}}
 ```
 
+> **Changes in 2.0.0**
+>
+* `ReactiveForms.createForm` is now `ReactiveForms.createFormBlock`. You'll get a deprecation warning if you use `createForm`.
+* The `basicInput` example no longer provides `<div class=".reactive-input-container">`. If you used that div in your styling,
+  you'll need to wrap your elements in it (or create a custom element with it).
+
 #### Examples
 
 [View the Live Example](http://forms-example.meteor.com/)
 
-Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is. 
+Built with Bootstrap 3 and the `sacha:spin` package, it demonstrates how flexible and extensible this package is.
 
 Check out the code--see how simple it is to build an engaging form flow in a very _Meteor_ way!
 
@@ -115,7 +121,7 @@ Hopefully, this satisfies your needs.
 
 #### 2. Add ReactiveForms components.
 
-The `basicForm` and `basicInput` templates are included with this package. 
+The `basicForm` and `basicInput` templates are included with this package.
 
 Connect elements to the schema in a surrounding form block using the `field` property.
 

@@ -465,7 +465,6 @@
   createForm = (obj) ->
     if console?.warn?
       console.warn('[forms] `createForm` is deprecated. Use `createFormBlock` instead.')
-
     return createFormBlock(obj)
 
 
@@ -474,7 +473,13 @@
   # ========================================================================================
 
   return {
+
+    # API
+    # ---
     createFormBlock: createFormBlock
-    createForm: createForm
     createElement: createElement
+
+    # Aliases
+    # -------
+    createForm: createForm
   }

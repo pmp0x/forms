@@ -1,3 +1,11 @@
+2.0.0
+=====
+
+* Address issue #18.
+  * The endpoint to create a form block should be called `createFormBlock` instead of `createForm`.
+* Address issue #16.
+  * Remove the `.reactive-input-container` div in the `basicInput` example, since it's not required.
+
 1.7.1
 =====
 
@@ -5,8 +13,8 @@
   * The `changed` argument in the action function now contains *any* fields that have changed, not just fields that were originally present in the initial data.
   * Support the optional `options` object to Simple Schema's `clean` function in `validationValue`.
 
-1.7
-===
+1.7.0
+=====
 
 * Address issues #9 and #11.
   * Initial data now supports objects with prototype methods.
