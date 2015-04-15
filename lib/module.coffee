@@ -414,8 +414,14 @@
         # The action function is bound to validatedValues.
         formElements = self.findAll(elementSelectors.join(', '))
         callbacks =
-          success: (message) -> setExclusive('success', message)
-          failed:  (message) -> setExclusive('failed',  message)
+          success: (message, callback) ->
+            setExclusive('success', message)
+            if callback? and typeof callback == 'function'
+              callback()
+          failed:  (message, callback) ->
+            setExclusive('failed',  message)
+            if callback? and typeof callback == 'function'
+              callback()
           reset:      (hard) -> resetForm(hard) # A hard reset clears success/failed state.
 
         self.data.action.call(validatedValues, formElements, callbacks, changedValues)
